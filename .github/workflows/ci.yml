@@ -10,6 +10,9 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.root }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

@@ -1,0 +1,16 @@
+name: ci:typescript
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'packages/typescript/**'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ci
+        uses: ./.github/workflows/ci.yml
+        with:
+          root: ./packages/typescript

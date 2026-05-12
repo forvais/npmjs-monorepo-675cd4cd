@@ -1,0 +1,16 @@
+name: ci:javascript
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'packages/javascript/**'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ci
+        uses: ./.github/workflows/ci.yml
+        with:
+          root: ./packages/javascript
