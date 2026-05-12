@@ -1,4 +1,4 @@
-name: ci:javascript
+name: node-ci:javascript
 
 on:
   workflow_dispatch:

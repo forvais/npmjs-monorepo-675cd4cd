@@ -1,4 +1,4 @@
-name: ci:typescript
+name: node-ci:typescript
 
 on:
   workflow_dispatch:
