@@ -23,9 +23,6 @@ jobs:
 
   lint:
     needs: changes
-    if: |
-      needs.changes.outputs.javascript == 'true'  ||
-      needs.changes.outputs.typescript == 'true'  ||
     runs-on: ubuntu-latest
     strategy:
       matrix:
