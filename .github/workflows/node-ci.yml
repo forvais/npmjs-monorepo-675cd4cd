@@ -32,7 +32,7 @@ jobs:
           - root: packages/typescript
             changed: ${{ needs.changes.outputs.typescript }}
     # skip the whole matrix leg when the flag is false
-    if: matrix.changed == 'true'
+    if: ${{ matrix.changed }} == 'true'
     name: ${{ matrix.root }}
     steps:
       - uses: actions/checkout@v4
