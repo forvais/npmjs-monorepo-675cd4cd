@@ -29,7 +29,7 @@ jobs:
         continue-on-error: true
         run: |
           echo "Release outputs:"
-          echo "${{ toJson(steps.release.outputs) }}"
+          echo "${{ steps.release.outputs }}"
 
   release-javascript:
     if: ${{ needs.release-please.outputs.javascript--release_created }}
