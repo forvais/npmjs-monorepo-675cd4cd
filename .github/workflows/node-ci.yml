@@ -31,14 +31,16 @@ jobs:
             changed: ${{ needs.changes.outputs.javascript }}
           - root: packages/typescript
             changed: ${{ needs.changes.outputs.typescript }}
-    # skip the whole matrix leg when the flag is false
-    if: ${{ matrix.changed }} == 'true'
     name: ${{ matrix.root }}
     steps:
       - uses: actions/checkout@v4
+        if: ${{ matrix.changed }} == 'true'
       - uses: pnpm/action-setup@v4
         with:
           node-version: 24.x
           cache: "pnpm"
+        if: ${{ matrix.changed }} == 'true'
       - run: pnpm install
+        if: ${{ matrix.changed }} == 'true'
       - run: npx --no-install turbo --filter=${{ matrix.root }} lint
+        if: ${{ matrix.changed }} == 'true'
