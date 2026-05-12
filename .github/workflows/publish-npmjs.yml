@@ -1,0 +1,50 @@
+name: publish
+
+on:
+  workflow_call:
+    inputs:
+      root:
+        required: true
+        type: string
+
+jobs:
+  npmjs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: ${{ inputs.root }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24.x
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build library
+        run: pnpm build
+
+      - name: Publish package
+        shell: bash
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+
+          if [[ "$VERSION" == *"-"* ]]; then
+            TAG=$(echo "$VERSION" | cut -d'-' -f2 | cut -d'.' -f1)
+            echo "Publishing prerelease with tag: $TAG"
+            npm publish --access=public --tag "$TAG"
+          else
+            echo "Publishing stable release"
+            npm publish --access=public --tag latest
+          fi

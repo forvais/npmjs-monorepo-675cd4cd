@@ -1,0 +1,107 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      javascript--tag_name: ${{ steps.release.outputs.javascript--tag_name }}
+      javascript--release_created: ${{ steps.release.outputs.javascript--release_created }}
+      typescript--tag_name: ${{ steps.release.outputs.typescript--tag_name }}
+      typescript--release_created: ${{ steps.release.outputs.typescript--release_created }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  release-javascript:
+    if: ${{ needs.release-please.outputs.javascript--release_created }}
+    runs-on: ubuntu-latest
+    needs: release-please
+    uses: ./.github/workflows/release-npmjs.yml
+    with: 
+      root: ./packages/javascript
+
+  release-javascript:
+    if: ${{ needs.release-please.outputs.typescript--release_created }}
+    runs-on: ubuntu-latest
+    needs: release-please
+    uses: ./.github/workflows/release-npmjs.yml
+    with: 
+      root: ./packages/typescript
+
+
+# jobs:
+#   release-please:
+#     runs-on: ubuntu-latest
+#     outputs:
+#       hello-react--tag_name: ${{ steps.release.outputs.hello-react--tag_name}}
+#       hello-react--release_created: ${{ steps.release.outputs.hello-react--release_created}}
+#       hello-rust--tag_name: ${{ steps.release.outputs.hello-rust--tag_name}}
+#       hello-rust--release_created: ${{ steps.release.outputs.hello-rust--release_created}}
+#     steps:
+#       - uses: googleapis/release-please-action@v4
+#         id: release
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           config-file: release-please-config.json
+#           manifest-file: .release-please-manifest.json
+#       - name: Print release outputs for debugging
+#         continue-on-error: true
+#         run: |
+#           echo "Release outputs:"
+#           echo "${{ toJson(steps.release.outputs) }}"
+#
+#
+#   release-hello-react:
+#     if: ${{needs.release-please.outputs.hello-react--release_created}}
+#     runs-on: ubuntu-latest
+#     needs: release-please
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: ./.github/actions/setup-node-env
+#         with:
+#           node-version: 18
+#           cache-path: hello-react/node_modules
+#           cache-key: "${{hashFiles('hello-react/package-lock.json')}}"
+#           project: hello-react
+#       - run: npm test --prefix hello-react -- a --watchAll=false
+#       - run: npm run build --prefix hello-react
+#       - run: zip -r hello-react-build.zip hello-react/build
+#       - name: Upload Release Artifact
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: gh release upload ${{ needs.release-please.outputs.hello-react--tag_name }} hello-react-build.zip
+#
+#   release-hello-rust:
+#     if: ${{needs.release-please.outputs.hello-rust--release_created}}
+#     runs-on: ubuntu-latest
+#     needs: release-please
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: dtolnay/rust-toolchain@stable
+#       - name: Test
+#         uses: clechasseur/rs-cargo@v2
+#         with:
+#           command: test
+#           args: --verbose --manifest-path hello-rust/Cargo.toml
+#       - name: Build
+#         uses: clechasseur/rs-cargo@v2
+#         with:
+#           command: build
+#           args: --verbose --release --manifest-path hello-rust/Cargo.toml --target x86_64-unknown-linux-gnu
+#       - name: Upload Release Artifact
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: gh release upload ${{ needs.release-please.outputs.hello-rust--tag_name }} hello-rust/target/x86_64-unknown-linux-gnu/release/hello_rust

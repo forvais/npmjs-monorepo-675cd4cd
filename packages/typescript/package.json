@@ -1,0 +1,36 @@
+{
+  "name": "@forvais/eslint-config-typescript-c5d52589",
+  "description": "Typescript ESLint config",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "license": "MIT",
+  "author": "Ben Chiang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forvais/eslint-configs.git"
+  },
+  "main": "./dist/index.cjs",
+  "scripts": {
+    "build": "tsdown",
+    "prepare": "husky"
+  },
+  "peerDependencies": {
+    "eslint": "^10.2.1",
+    "typescript-eslint": "^8.59.3"
+  },
+  "devDependencies": {
+    "eslint": "^10.2.1",
+    "typescript-eslint": "^8.59.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.28.2"
+}

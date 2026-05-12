@@ -1,0 +1,37 @@
+{
+  "name": "@forvais/eslint-config-javascript-cf84d5fc",
+  "description": "Javascript ESLint config",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "license": "MIT",
+  "author": "Ben Chiang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forvais/eslint-configs.git"
+  },
+  "main": "./dist/index.cjs",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.28.2"
+}
