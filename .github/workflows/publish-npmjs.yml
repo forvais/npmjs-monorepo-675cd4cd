@@ -13,7 +13,6 @@ jobs:
       id-token: write
     defaults:
       run:
-        working-directory: ${{ inputs.root }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -28,12 +27,15 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
+        working-directory: ${{ inputs.root }}
         run: pnpm install
 
       - name: Build library
+        working-directory: ${{ inputs.root }}
         run: pnpm build
 
       - name: Publish package
+        working-directory: ${{ inputs.root }}
         shell: bash
         run: |
           VERSION=$(node -p "require('./package.json').version")

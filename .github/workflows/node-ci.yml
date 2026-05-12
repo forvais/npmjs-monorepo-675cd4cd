@@ -10,9 +10,6 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ inputs.root }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -27,7 +24,9 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
+        working-directory: ${{ inputs.root }}
         run: pnpm install
 
       - name: Run lint
+        working-directory: ${{ inputs.root }}
         run: pnpm run lint
