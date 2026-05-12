@@ -272,7 +272,7 @@ export default defineConfig([
       'stylistic/function-paren-newline': ['error', 'consistent'],
       'stylistic/generator-star-spacing': 'error',
       'stylistic/implicit-arrow-linebreak': ['error', 'beside'],
-      'stylistic/indent': ['error', 3, {
+      'stylistic/indent': ['error', 9, {
         SwitchCase: 1,
       }],
       'stylistic/indent-binary-ops': ['error', 2],
