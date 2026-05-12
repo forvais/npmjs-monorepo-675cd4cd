@@ -4,11 +4,11 @@
   "tag-separator": "@",
   "separate-pull-requests": true,
   "packages": {
-    "javascript": {
+    "./packages/javascript": {
       "path": "./packages/javascript",
       "release-type": "node"
     },
-    "typescript": {
+    "./packages/typescript": {
       "path": "./packages/typescript",
       "release-type": "node"
     }
