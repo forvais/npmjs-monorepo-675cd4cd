@@ -27,4 +27,4 @@ jobs:
         run: pnpm install
 
       - name: Run lint
-        run: npx --no-install turbo --filter=${{ project }} lint
+        run: npx --no-install turbo --filter=${{ inputs.project }} lint
