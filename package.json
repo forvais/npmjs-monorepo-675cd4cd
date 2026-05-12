@@ -12,8 +12,7 @@
   "scripts": {
     "build": "turbo build",
     "inspect": "eslint --inspect-config",
-    "lint": "npm-run-all lint:*",
-    "lint:eslint": "eslint src/ --no-error-on-unmatched-pattern",
+    "lint": "turbo lint",
     "prepare": "husky"
   },
   "devDependencies": {

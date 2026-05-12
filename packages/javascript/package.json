@@ -18,7 +18,9 @@
   },
   "main": "./dist/index.cjs",
   "scripts": {
-    "build": "tsdown"
+    "build": "tsdown",
+    "lint": "npm-run-all lint:*",
+    "lint:eslint": "eslint src/ --no-error-on-unmatched-pattern"
   },
   "peerDependencies": {
     "@eslint/js": "^10.0.1",
