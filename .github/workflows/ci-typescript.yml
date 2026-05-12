@@ -2,7 +2,7 @@ name: node-ci:typescript
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     paths:
       - 'packages/typescript/**'
 
