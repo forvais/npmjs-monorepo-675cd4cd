@@ -3,7 +3,7 @@ name: node-ci
 on:
   workflow_call:
     inputs:
-      root:
+      project:
         required: true
         type: string
 
@@ -24,9 +24,7 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        working-directory: ${{ inputs.root }}
         run: pnpm install
 
       - name: Run lint
-        working-directory: ${{ inputs.root }}
-        run: pnpm run lint
+        run: npx --no-install turbo --filter=${{ project }} lint
