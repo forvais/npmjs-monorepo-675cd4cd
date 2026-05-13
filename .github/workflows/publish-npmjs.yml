@@ -11,8 +11,6 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    defaults:
-      run:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
