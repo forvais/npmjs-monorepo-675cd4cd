@@ -22,8 +22,8 @@ jobs:
             typescript: [ 'packages/typescript' ]
       - shell: bash
         env:
-          OUTPUT: ${{ steps.filter.outputs.stdout }}
-        run: echo "$OUTPUT"
+          FILTER_OUTPUT: ${{ steps.filter.outputs.stdout }}
+        run: echo "$FILTER_OUTPUT"
 
   # lint:
   #   needs: changes
