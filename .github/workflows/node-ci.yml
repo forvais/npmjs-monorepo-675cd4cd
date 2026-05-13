@@ -36,6 +36,8 @@ jobs:
             changed: ${{ needs.changes.outputs.typescript }}
     name: ${{ matrix.root }}
     steps:
+      - shell: bash
+        run: echo "${{ toJSON(matrix) }}"
       - uses: actions/checkout@v4
         if: ${{ matrix.changed }} == 'true'
       - uses: pnpm/action-setup@v4
