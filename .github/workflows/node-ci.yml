@@ -34,7 +34,6 @@ jobs:
             changed: ${{ needs.changes.outputs.javascript }}
           - root: packages/typescript
             changed: ${{ needs.changes.outputs.typescript }}
-    if: matrix.changed == true
     name: ${{ matrix.root }}
     steps:
       - shell: bash
