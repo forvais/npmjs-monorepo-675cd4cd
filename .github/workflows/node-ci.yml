@@ -21,7 +21,7 @@ jobs:
             javascript: [ 'packages/javascript' ]
             typescript: [ 'packages/typescript' ]
       - shell: bash
-        run: env
+        run: echo "${{ toJSON(steps.filter.outputs) }}"
 
   # lint:
   #   needs: changes
