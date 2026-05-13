@@ -275,7 +275,7 @@ export default defineConfig([
       'stylistic/indent': ['error', 2, {
         SwitchCase: 1,
       }],
-      'stylistic/indent-binary-ops': ['error', 4],
+      'stylistic/indent-binary-ops': ['error', 2],
       'stylistic/jsx-child-element-spacing': ['off'],
       'stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned'],
       'stylistic/jsx-closing-tag-location': 'off', // Conflicts with 'stylistic/function-paren-newline'
