@@ -20,6 +20,9 @@ jobs:
           filters: |
             javascript: [ 'packages/javascript/**' ]
             typescript: [ 'packages/typescript/**' ]
+      - name: Debugging outputs
+        shell: bash
+        run: echo "${{ toJSON(steps.filter.outputs) }}"
 
   lint:
     needs: changes
