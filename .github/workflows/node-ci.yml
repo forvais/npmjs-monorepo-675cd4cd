@@ -23,7 +23,7 @@ jobs:
       - shell: bash
         env:
           FILTER_OUTPUT: ${{ steps.filter.outputs.stdout }}
-        run: echo "$FILTER_OUTPUT"
+        run: echo "${{ env.FILTER_OUTPUT }}"
 
   # lint:
   #   needs: changes
