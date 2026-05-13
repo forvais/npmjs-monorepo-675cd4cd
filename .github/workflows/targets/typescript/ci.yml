@@ -1,4 +1,4 @@
-name: node-ci:javascript
+name: node:ci:typescript
 
 on:
   workflow_dispatch:
@@ -6,11 +6,11 @@ on:
     branches:
       - main
     paths:
-      - 'packages/javascript/**'
+      - 'packages/typescript/**'
 
 jobs:
   node-ci:
     uses: ./.github/workflows/node-ci.yml
     secrets: inherit
     with:
-      packageJson: "./packages/javascript/package.json"
+      packageJson: "./packages/typescript/package.json"
