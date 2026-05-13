@@ -277,7 +277,7 @@ export default defineConfig([
       }],
       'stylistic/indent-binary-ops': ['error', 2],
       'stylistic/jsx-child-element-spacing': ['off'],
-      'stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+      'stylistic/jsx-closing-bracket-location': ['error'],
       'stylistic/jsx-closing-tag-location': 'off', // Conflicts with 'stylistic/function-paren-newline'
       'stylistic/jsx-curly-brace-presence': ['error'],
       'stylistic/jsx-curly-newline': ['error', {
