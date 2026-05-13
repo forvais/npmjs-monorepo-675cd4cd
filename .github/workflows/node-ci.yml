@@ -38,9 +38,9 @@ jobs:
     steps:
       - shell: bash
         run: echo "${{ toJSON(matrix) }}"
-      - name: Changed?
-        shell: bash
-        run: echo "${{ matrix.changed }}"
+      - name: Skip unchanged
+        if: matrix.changed != 'true'
+        run: exit 0
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v3
