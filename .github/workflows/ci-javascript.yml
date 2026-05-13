@@ -9,8 +9,8 @@ on:
       - 'packages/javascript/**'
 
 jobs:
-  node-ci:
-    uses: ./.github/workflows/node-ci.yml
+  ci:
+    uses: ./.github/workflows/jobs/node/ci.yml
     secrets: inherit
     with:
       packageJson: "./packages/javascript/package.json"
