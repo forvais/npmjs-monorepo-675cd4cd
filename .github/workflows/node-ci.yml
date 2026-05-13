@@ -34,20 +34,16 @@ jobs:
             changed: ${{ needs.changes.outputs.javascript }}
           - root: packages/typescript
             changed: ${{ needs.changes.outputs.typescript }}
+    if: matrix.changed == true
     name: ${{ matrix.root }}
     steps:
       - shell: bash
         run: echo "${{ toJSON(matrix) }}"
       - uses: actions/checkout@v4
-        if: matrix.changed
       - uses: pnpm/action-setup@v4
-        if: matrix.changed
       - uses: actions/setup-node@v3
         with:
           node-version: 24.x
           cache: "pnpm"
-        if: matrix.changed
       - run: pnpm install
-        if: matrix.changed
       - run: npx --no-install turbo --filter=${{ matrix.root }} lint
-        if: matrix.changed
