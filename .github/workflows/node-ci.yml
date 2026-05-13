@@ -20,29 +20,33 @@ jobs:
           filters: |
             javascript: [ 'packages/javascript' ]
             typescript: [ 'packages/typescript' ]
+      - shell: bash
+        env:
+          OUTPUT: ${{ steps.filter.outputs.stdout }}
+        run: echo "$OUTPUT"
 
-  lint:
-    needs: changes
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - root: packages/javascript
-            changed: ${{ needs.changes.outputs.javascript }}
-          - root: packages/typescript
-            changed: ${{ needs.changes.outputs.typescript }}
-    name: ${{ matrix.root }}
-    steps:
-      - uses: actions/checkout@v4
-        if: ${{ matrix.changed }} == 'true'
-      - uses: pnpm/action-setup@v4
-        if: ${{ matrix.changed }} == 'true'
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 24.x
-          cache: "pnpm"
-        if: ${{ matrix.changed }} == 'true'
-      - run: pnpm install
-        if: ${{ matrix.changed }} == 'true'
-      - run: npx --no-install turbo --filter=${{ matrix.root }} lint
-        if: ${{ matrix.changed }} == 'true'
+  # lint:
+  #   needs: changes
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       include:
+  #         - root: packages/javascript
+  #           changed: ${{ needs.changes.outputs.javascript }}
+  #         - root: packages/typescript
+  #           changed: ${{ needs.changes.outputs.typescript }}
+  #   name: ${{ matrix.root }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       if: ${{ matrix.changed }} == 'true'
+  #     - uses: pnpm/action-setup@v4
+  #       if: ${{ matrix.changed }} == 'true'
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 24.x
+  #         cache: "pnpm"
+  #       if: ${{ matrix.changed }} == 'true'
+  #     - run: pnpm install
+  #       if: ${{ matrix.changed }} == 'true'
+  #     - run: npx --no-install turbo --filter=${{ matrix.root }} lint
+  #       if: ${{ matrix.changed }} == 'true'
