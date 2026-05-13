@@ -13,4 +13,4 @@ jobs:
     uses: ./.github/workflows/node-ci.yml
     secrets: inherit
     with:
-      project: "@forvais/eslint-config-typescript-c5d52589"
+      packageJson: "./packages/typescript/package.json"

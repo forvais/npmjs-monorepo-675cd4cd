@@ -1,51 +1,42 @@
-name: CI
+name: node-ci
 
 on:
-  workflow_dispatch:
-  pull_request:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      packageJson: # Relative path from repository root to package/app package.json
+        required: true
+        type: string
 
 jobs:
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      javascript: ${{ steps.filter.outputs.javascript }}
-      typescript: ${{ steps.filter.outputs.typescript }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            javascript: [ 'packages/javascript/**' ]
-            typescript: [ 'packages/typescript/**' ]
-      - name: Debugging outputs
-        shell: bash
-        run: echo "${{ toJSON(steps.filter.outputs) }}"
-
   lint:
-    needs: changes
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - root: packages/javascript
-            changed: ${{ needs.changes.outputs.javascript }}
-          - root: packages/typescript
-            changed: ${{ needs.changes.outputs.typescript }}
-    name: ${{ matrix.root }}
     steps:
-      - shell: bash
-        run: echo "${{ toJSON(matrix) }}"
-      - name: Skip unchanged
-        if: matrix.changed != 'true'
-        run: exit 0
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Derive project metadata
+        shell: bash
+        run: |
+          PROJECT_ROOT="$(dirname "${{ inputs.packageJson }}")"
+          PACKAGE_NAME="$(node -p "require('./${{ inputs.packageJson }}').name")"
+
+          echo "root=$PROJECT_ROOT" >> "$GITHUB_ENV"
+          echo "packageName=$PACKAGE_NAME" >> "$GITHUB_ENV"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 24.x
-          cache: "pnpm"
-      - run: pnpm install
-      - run: npx --no-install turbo --filter=${{ matrix.root }} lint
+          cache: pnpm
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            ${{ env.projectRoot }}/package.json
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run lint
+        run: npx --no-install turbo --filter=${{ env.packageName }} lint
