@@ -21,7 +21,6 @@ jobs:
             javascript: [ 'packages/javascript' ]
             typescript: [ 'packages/typescript' ]
       - shell: bash
-        env:
         run: echo "${{ steps.filter.outputs }}"
 
   # lint:
