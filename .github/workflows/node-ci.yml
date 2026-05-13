@@ -18,8 +18,8 @@ jobs:
         id: filter
         with:
           filters: |
-            javascript: [ 'packages/javascript' ]
-            typescript: [ 'packages/typescript' ]
+            javascript: [ 'packages/javascript/**' ]
+            typescript: [ 'packages/typescript/**' ]
       - shell: bash
         run: echo "${{ toJSON(steps.filter.outputs) }}"
 
