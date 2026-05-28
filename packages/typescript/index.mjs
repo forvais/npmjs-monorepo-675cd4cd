@@ -1,6 +1,8 @@
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
+throw Error('ahh');
+
 export default defineConfig(
   {
     'name': 'forvais/plugin/typescript-eslint/overrides',
