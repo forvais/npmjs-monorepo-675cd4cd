@@ -1,4 +1,5 @@
 {
+  "plugins": ["node-workspace"],
   "include-component-in-tag": true,
   "include-v-in-tag": true,
   "tag-separator": "@",
