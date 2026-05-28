@@ -1,0 +1,17 @@
+# Changelog
+
+## 1.0.0 (2026-05-28)
+
+
+### Features
+
+* add per-package linting ([7cb8520](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/7cb85206e97aa80aac4159812c94d8a286eb5e0f))
+* initial commit ([27335f1](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/27335f1ec985546742061198adcc8ec1613e52f2))
+* turn random rule off ([dfd1554](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/dfd1554c9b53e068593a0973e4ab4fb944d9654e))
+* **typescript:** remove error ([e7ea7db](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/e7ea7dbb3a78851b58aa3e88496a2bd4d58fa913))
+* **typescript:** throw error ([4d2d644](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/4d2d644f6b21f799a6fcc4ba601dcd4cf3d25fb6))
+
+
+### Bug Fixes
+
+* lint on index.mjs files ([49fb8fd](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/49fb8fd7061995b09cae6597fb5b3be4d92ed22d))
