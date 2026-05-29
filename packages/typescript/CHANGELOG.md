@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-typescript-c5d52589@v1.5.0...eslint-config-typescript-c5d52589@v1.6.0) (2026-05-29)
+
+
+### Features
+
+* enable return await ([11f3a8a](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/11f3a8ab102fe46095050ec020fa574dbd2bea43))
+
 ## [1.5.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-typescript-c5d52589@v1.4.0...eslint-config-typescript-c5d52589@v1.5.0) (2026-05-29)
 
 
