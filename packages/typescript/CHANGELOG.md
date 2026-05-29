@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.3.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-typescript-c5d52589@v1.2.0...eslint-config-typescript-c5d52589@v1.3.0) (2026-05-29)
+
+
+### Features
+
+* disable return await ([e0c2e20](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/e0c2e20d50d4f19df27e92f961cb49f14e733b6d))
+
+## [1.2.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-typescript-c5d52589@v1.1.0...eslint-config-typescript-c5d52589@v1.2.0) (2026-05-29)
+
+
+### Features
+
+* enable return await ([01f3428](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/01f34280eec2419feacb0b3cbcb721710e355767))
+
+## [1.1.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-typescript-c5d52589@v1.0.0...eslint-config-typescript-c5d52589@v1.1.0) (2026-05-29)
+
+
+### Features
+
+* disable return await ([02a5e0a](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/02a5e0a1311c72758f8055f85e35e3853b77dad1))
+* disable triple slash reference ([bcc8acf](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/bcc8acfc371a95335b62c0cf1283801d7743fe8d))
+* enable triple slash reference ([142eeee](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/142eeee34037b5d1d29903f4aaf53bba8ee397e3))
+
 ## 1.0.0 (2026-05-28)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@forvais/eslint-config-typescript-c5d52589",
   "description": "Typescript ESLint config",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "type": "module",
   "module": "./dist/index.mjs",
   "exports": {
@@ -33,5 +33,5 @@
   "engines": {
     "node": ">=20"
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@11.4.0"
 }
