@@ -7,7 +7,7 @@
   "author": "Ben Chiang",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/forvais/eslint-configs.git"
+    "url": "git+https://github.com/forvais/npmjs-monorepo-675cd4cd.git"
   },
   "scripts": {
     "build": "turbo build",
