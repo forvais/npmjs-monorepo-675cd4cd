@@ -73,4 +73,5 @@ runs:
       run: pnpm install ${{ inputs.extra-flags }}
 
     - name: Fix pnpm permissions
+      shell: bash
       run: chmod +x /home/runner/.cache/node/corepack/v1/pnpm/*/bin/pnpm.cjs || true
