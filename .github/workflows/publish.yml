@@ -49,4 +49,4 @@ jobs:
             echo "Publishing stable release"
           fi
 
-          pnpm --filter "$NAME" exec pnpm publish --provenance --tag "$TAG" --no-git-checks
+          pnpm --filter "$NAME" exec pnpm publish --provenance --tag --access public "$TAG" --no-git-checks
