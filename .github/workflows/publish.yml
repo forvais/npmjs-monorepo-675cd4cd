@@ -28,8 +28,8 @@ jobs:
       - name: Extract package name
         id: pkg
         run: |
-          TAG="${{ github.event.release.tag_name }}"
-          PKG="${TAG##*--}"
+          NAME="${{ github.event.release.tag_name }}"
+          PKG="${NAME%@*}"
           echo "name=$PKG" >> $GITHUB_OUTPUT
 
       - name: Build library
