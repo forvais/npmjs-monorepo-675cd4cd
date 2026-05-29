@@ -23,9 +23,7 @@ jobs:
         id: pkg
         run: |
           BRANCH="${{ github.head_ref }}"
-
           PKG="${BRANCH##*--}"
-
           echo "name=$PKG" >> $GITHUB_OUTPUT
 
       - run: pnpm --filter "${{ steps.pkg.outputs.name }}" lint
