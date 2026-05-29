@@ -163,7 +163,7 @@ export default defineConfig(
       'typescript-eslint/promise-function-async': 'error',
       'typescript-eslint/related-getter-setter-pairs': 'error',
       'typescript-eslint/require-array-sort-compare': 'error',
-      'typescript-eslint/require-await': 'error',
+      'typescript-eslint/require-await': 'off',
       'typescript-eslint/restrict-plus-operands': 'error',
       'typescript-eslint/restrict-template-expressions': 'error',
       'typescript-eslint/return-await': 'error',
