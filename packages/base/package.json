@@ -1,7 +1,7 @@
 {
   "name": "@forvais/eslint-config-base-cf84d5fc",
   "description": "Javascript ESLint config",
-  "version": "1.1.0",
+  "version": "3.0.0",
   "type": "module",
   "module": "./dist/index.mjs",
   "exports": {
@@ -25,12 +25,12 @@
   "peerDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.2.1"
+    "eslint": "^10.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.2.1"
+    "eslint": "^10.4.0"
   },
   "engines": {
     "node": ">=20"

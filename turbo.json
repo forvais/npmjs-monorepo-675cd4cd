@@ -6,7 +6,7 @@
       "outputs": ["dist/**"]
     },
     "lint": {
-      "dependsOn": ["^list"],
+      "dependsOn": ["^lint"],
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@forvais/eslint-config-typescript-c5d52589",
   "description": "Typescript ESLint config",
-  "version": "1.9.0",
+  "version": "3.0.0",
   "type": "module",
   "module": "./dist/index.mjs",
   "exports": {
@@ -23,12 +23,12 @@
     "lint:eslint": "eslint index.mjs --no-error-on-unmatched-pattern"
   },
   "peerDependencies": {
-    "eslint": "^10.2.1",
-    "typescript-eslint": "^8.59.3"
+    "eslint": "^10.4.0",
+    "typescript-eslint": "^8.59.4"
   },
   "devDependencies": {
-    "eslint": "^10.2.1",
-    "typescript-eslint": "^8.59.3"
+    "eslint": "^10.4.0",
+    "typescript-eslint": "^8.59.4"
   },
   "engines": {
     "node": ">=20"

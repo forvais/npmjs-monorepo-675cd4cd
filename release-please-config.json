@@ -5,8 +5,8 @@
   "tag-separator": "@",
   "separate-pull-requests": true,
   "packages": {
-    "packages/javascript": {
-      "path": "./packages/javascript",
+    "packages/base": {
+      "path": "./packages/base",
       "release-type": "node"
     },
     "packages/typescript": {
