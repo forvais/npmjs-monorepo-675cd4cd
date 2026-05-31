@@ -18,6 +18,12 @@ export default defineConfig(
   {
     'name': 'forvais/plugin/typescript-eslint',
     'files': ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx'],
+    'languageOptions': {
+      'parser': tseslint.parser,
+      'parserOptions': {
+        'projectService': true,
+      },
+    },
     'plugins': {
       'typescript-eslint': tseslint.plugin,
     },
