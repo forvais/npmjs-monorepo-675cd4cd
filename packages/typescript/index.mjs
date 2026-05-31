@@ -23,7 +23,7 @@ export default defineConfig(
     },
     'rules': {
       'typescript-eslint/adjacent-overload-signatures': 'error',
-      'typescript-eslint/array-type': ['error', 'array'],
+      'typescript-eslint/array-type': ['error', { default: 'array' }],
       'typescript-eslint/await-thenable': 'error',
       'typescript-eslint/ban-ts-comment': ['error', {
         'minimumDescriptionLength': 3,
