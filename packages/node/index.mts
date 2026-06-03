@@ -2,6 +2,7 @@ import { defineConfig, type Config } from 'eslint/config';
 
 import n from 'eslint-plugin-n';
 
+// fake change
 
 const rules: Config['rules'] = {
   'n/no-extraneous-import': 'off',
