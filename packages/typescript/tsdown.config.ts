@@ -1,3 +1,4 @@
+// eslint-disable-next-line n/no-extraneous-import
 import { defineConfig } from 'tsdown';
 
 export default defineConfig([
@@ -5,7 +6,7 @@ export default defineConfig([
     target: 'esnext',
     outDir: 'dist',
     format: ['esm', 'cjs'],
-    entry: './index.mjs',
+    entry: './index.mts',
     platform: 'node',
     dts: true,
     sourcemap: false,

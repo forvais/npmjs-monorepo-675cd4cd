@@ -1,6 +1,7 @@
 import { defineConfig } from 'eslint/config';
 
-import js from './packages/base/index.mjs';
-import ts from './packages/typescript/index.mjs';
+import js from './packages/base/index.mts';
+import ts from './packages/typescript/index.mts';
+import node from './packages/node/index.mts';
 
-export default defineConfig(js, ts);
+export default defineConfig(js, ts, node);

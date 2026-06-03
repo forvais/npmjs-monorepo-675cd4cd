@@ -1,3 +1,5 @@
+/* eslint-disable typescript-eslint/no-magic-numbers */
+
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig } from 'eslint/config';
@@ -235,7 +237,7 @@ export default defineConfig([
       'sort-imports': 'off',
       'sort-keys': 'off',
       'sort-vars': 'off',
-      'strict': 'error',
+      'strict': 'off',
       'symbol-description': 'error',
       'unicode-bom': 'error',
       'use-isnan': 'error',

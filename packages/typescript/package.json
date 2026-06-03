@@ -33,5 +33,6 @@
   "engines": {
     "node": ">=20"
   },
-  "packageManager": "pnpm@11.4.0"
+  "packageManager": "pnpm@11.4.0",
+  "types": "./dist/index.d.cts"
 }

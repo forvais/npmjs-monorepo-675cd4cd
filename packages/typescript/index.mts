@@ -3,9 +3,9 @@ import tseslint from 'typescript-eslint';
 
 export default defineConfig(
   {
-    'name': 'forvais/plugin/typescript-eslint/overrides',
-    'files': ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx'],
-    'rules': {
+    name: 'forvais/plugin/typescript-eslint/overrides',
+    files: ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx'],
+    rules: {
       'class-methods-use-this': 'off', // overriden by 'typescript-eslint/class-methods-use-this'
       'default-param-last': 'off', // overriden by 'typescript-eslint/default-param-last'
       'dot-notation': 'off', // overriden by 'typescript-eslint/dot-notation'
@@ -16,18 +16,18 @@ export default defineConfig(
     },
   },
   {
-    'name': 'forvais/plugin/typescript-eslint',
-    'files': ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx'],
-    'languageOptions': {
-      'parser': tseslint.parser,
-      'parserOptions': {
-        'projectService': true,
+    name: 'forvais/plugin/typescript-eslint',
+    files: ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        projectService: true,
       },
     },
-    'plugins': {
+    plugins: {
       'typescript-eslint': tseslint.plugin,
     },
-    'rules': {
+    rules: {
       'typescript-eslint/adjacent-overload-signatures': 'error',
       'typescript-eslint/array-type': ['error', { default: 'array' }],
       'typescript-eslint/await-thenable': 'error',
@@ -78,7 +78,7 @@ export default defineConfig(
       'typescript-eslint/no-base-to-string': 'error',
       'typescript-eslint/no-confusing-non-null-assertion': 'error',
       'typescript-eslint/no-confusing-void-expression': ['error', {
-        'ignoreVoidOperator': true,
+        ignoreVoidOperator: true,
       }],
       'typescript-eslint/no-deprecated': 'error',
       'typescript-eslint/no-dupe-class-members': 'error',
@@ -88,7 +88,7 @@ export default defineConfig(
       'typescript-eslint/no-empty-function': 'off',
       'typescript-eslint/no-empty-object-type': 'error',
       'typescript-eslint/no-explicit-any': ['error', {
-        'fixToUnknown': true,
+        fixToUnknown: true,
       }],
       'typescript-eslint/no-extra-non-null-assertion': 'error',
       'typescript-eslint/no-extraneous-class': 'error',

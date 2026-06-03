@@ -1,6 +1,6 @@
 {
-  "name": "@forvais/eslint-config-base-cf84d5fc",
-  "description": "Javascript ESLint config",
+  "name": "@forvais/eslint-config-node-339b3b0f",
+  "description": "Node ESLint config",
   "version": "3.0.0",
   "type": "module",
   "module": "./dist/index.mjs",
@@ -23,14 +23,14 @@
     "lint:eslint": "eslint index.mjs --no-error-on-unmatched-pattern"
   },
   "peerDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.4.0"
+    "eslint": "^10.4.0",
+    "eslint-plugin-n": "^18.0.1",
+    "globals": "^17.6.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.4.0"
+    "eslint": "^10.4.0",
+    "eslint-plugin-n": "^18.0.1",
+    "globals": "^17.6.0"
   },
   "engines": {
     "node": ">=20"

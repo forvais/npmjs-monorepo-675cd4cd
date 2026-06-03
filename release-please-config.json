@@ -3,7 +3,7 @@
   "include-component-in-tag": true,
   "include-v-in-tag": true,
   "tag-separator": "@",
-  "separate-pull-requests": true,
+  "separate-pull-requests": false,
   "packages": {
     "packages/base": {
       "path": "./packages/base",
@@ -11,6 +11,10 @@
     },
     "packages/typescript": {
       "path": "./packages/typescript",
+      "release-type": "node"
+    }
+    "packages/node": {
+      "path": "./packages/node",
       "release-type": "node"
     }
   },

@@ -41,8 +41,13 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "includes": [
+  "include": [
     "./packages/base/tsdown.config.ts",
-    "./packages/typescript/tsdown.config.ts"
+    "./packages/typescript/tsdown.config.ts",
+    "./packages/node/tsdown.config.ts",
+
+    "./packages/base/index.mts",
+    "./packages/typescript/index.mts",
+    "./packages/node/index.mts"
   ]
 }
