@@ -1,7 +1,7 @@
 {
   "name": "@forvais/eslint-config-base-cf84d5fc",
   "description": "Javascript ESLint config",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "type": "module",
   "module": "./dist/index.mjs",
   "exports": {

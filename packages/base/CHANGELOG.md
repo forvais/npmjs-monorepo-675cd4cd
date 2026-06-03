@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.1.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-base-cf84d5fc@v3.0.0...eslint-config-base-cf84d5fc@v3.1.0) (2026-06-03)
+
+
+### Features
+
+* D: ([9c9b07f](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/9c9b07f6d93b07500d54b58c03e346386595bb74))
+* mass changes ([c97936e](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/c97936e00b7ce8f341f7925f9624b565a0da13c5))
+* rename javascript config to base ([55f0e46](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/55f0e46eaae73b4fb683dadc5521d9490d600431))
+
 ## [1.1.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-javascript-cf84d5fc@v1.0.0...eslint-config-javascript-cf84d5fc@v1.1.0) (2026-05-29)
 
 
