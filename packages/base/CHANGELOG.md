@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-base-cf84d5fc@v3.1.0...eslint-config-base-cf84d5fc@v3.2.0) (2026-06-03)
+
+
+### Features
+
+* turn off extraneous import/require rules ([59d9054](https://github.com/forvais/npmjs-monorepo-675cd4cd/commit/59d90543718447b683f496071792f16e4d9dda45))
+
 ## [3.1.0](https://github.com/forvais/npmjs-monorepo-675cd4cd/compare/eslint-config-base-cf84d5fc@v3.0.0...eslint-config-base-cf84d5fc@v3.1.0) (2026-06-03)
 
 
