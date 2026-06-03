@@ -1,7 +1,7 @@
 {
   "name": "@forvais/eslint-config-node-339b3b0f",
   "description": "Node ESLint config",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "type": "module",
   "module": "./dist/index.mjs",
   "exports": {
